@@ -1,0 +1,356 @@
+*[data-element='animated'] {
+    visibility: hidden;
+    opacity: 0;
+}
+@media screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    *[data-element='animated'] {
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+@media screen and (max-device-width: 640px) {
+    *[data-element='animated'] {
+        visibility: visible;
+        opacity: 1;
+    }
+}
+.animated {
+    visibility: visible;
+    opacity: 1;
+}
+
+html,
+body
+{
+    font-family: $base-font-family;
+    margin: 0;
+    padding: 0;
+}
+
+    h2 {
+        font-size: 1.68em * 1.25;
+    }
+    h3 {
+        font-size: 1.68em * 1.1;
+    }
+    
+
+@include media($min-desktop) {
+    h2 {
+        font-size: 1.68em * 2;
+    }
+    h3 {
+        font-size: 1.68em * 1.25;
+    }
+}
+.text-primary
+{
+    color: $primary-color;
+}
+.overlay
+{
+    position: relative;
+    &:after
+    {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+
+        content: '';
+
+        background-color: rgba(0,0,0,.75);
+    }
+}
+.site-header
+{
+
+    position: absolute;
+    z-index: 50;
+    top: 0;
+    right: 0;
+    bottom: auto;
+    left: 0;
+
+    padding-top: 2em;
+    padding-right: 1em;
+    padding-left: 1em;
+
+    @include clearfix;
+    @include transition (all 0.25s ease-in-out);
+    #thirdkraft_logo {
+        //float: left;
+        width: 60px;
+    }
+    .brand
+    {
+        color: white;
+        font-size: 2em;
+        span {
+            display: inline-block;
+            @include transform(translateY(-11px));
+        }
+    }
+    // &.scrolled {
+    //     padding-top: 0;
+    //     position: fixed;
+    //     background-color: black;
+    // }
+}
+.main-navigation
+{
+    display: table;
+    float: right;
+
+    margin: 0;
+    padding: 0;
+    > li
+    {
+        display: table-cell;
+        > a
+        {
+    
+
+            display: inline-block;
+
+            padding: .75em 1em;
+
+            text-decoration: none;
+
+            color: #ddd;
+            &:hover,
+            &:focus
+            {
+                color: white;
+            }
+        }
+    }
+}
+.jumbotron-wrap {
+    background-color: black;
+}
+.jumbotron
+{
+    position: relative;
+    min-height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    @extend .overlay;
+
+    display: flex;
+    align-items: center;
+    padding: 1em;
+
+    .text-wrap
+    {
+        @include transform(translateY(60px));
+        position: relative;
+        z-index: 1;
+        h1,h2
+        {
+            color: #eee;
+            text-shadow: 1px 1px 2px rgba(0,0,0,.75);
+        }
+        h1 {
+            font-size: 3em;
+            @include media($min-desktop) {
+                font-size: 4em;
+            }
+            line-height: 1;
+            margin: 0;
+        }
+        h2 {
+            font-size: 1.25em;
+            @include media($min-desktop) {
+                font-size: 2em;
+            }
+            font-weight: 400;
+            margin-top: 0.5em;
+        }
+        &.scrolled {
+            opacity: 0.35;
+        }
+        a
+        {
+            color: #eee;
+        }
+    }
+    @include media($min-desktop) {
+        .text-wrap
+        {
+
+            max-width: 50%;
+        }  
+    }
+}
+
+.welcome-text
+{
+    //overflow: hidden;
+
+    position: relative;
+
+    padding: 6em 1em 8em;
+
+    background-color: $dark-gray;
+    .content
+    {
+        text-align: center;
+
+        color: white;
+
+        @include outer-container(30em);
+        h2
+        {
+           letter-spacing: -1px;
+           margin-bottom: 1em;
+        }
+        p {
+            font-size: 1.2em;
+        }
+        
+    }
+    &:after
+    {
+        position: absolute;
+        z-index: -1;
+        z-index: 10;
+        top: 98.1%;
+        left: 50%;
+
+        width: 0;
+        height: 0;
+        margin-left: -40px;
+
+        content: '';
+
+        border-top: solid 40px $dark-gray;
+        border-right: solid 40px transparent;
+        border-left: solid 40px transparent;
+    }
+}
+
+.drama
+{
+    padding-top: 9em;
+    padding-bottom: 9rem;
+
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    @extend .overlay;
+    .container {
+        @include outer-container();
+    }
+    .content
+    {
+        position: relative;
+        z-index: 1;
+        padding: 1em;
+         @include media($min-desktop) {
+            @include span-columns(6);    
+        }
+        
+        
+
+        h2
+        {
+
+
+            color: white;
+        }
+        p
+        {
+            color: white;
+        }
+    }
+}
+.services {
+    padding-top: 6em;
+    padding-bottom: 6em;
+    @include clearfix;
+    .service {
+        .content {
+            @include transition(all 0.25s ease-in-out);
+            &:hover {
+                @include transform(scale(1.1));
+            }
+        }
+        padding: 2em;
+        text-align: center;
+        @include media($min-desktop) {
+            @include span-columns(4);
+            padding: 3em;
+            border-right: 1px solid $light-gray;
+            &:last-child {
+                border-right: 0;
+            }
+        }
+        img {
+            margin-bottom: 1em;
+        }
+        h3 {
+
+        }
+    }
+}
+
+.contact {
+      background-color: $dark-gray;
+    padding-top: 6em;
+    padding-bottom: 6em;
+    @include clearfix;
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    .content {
+        padding: 1em;
+        h2 {
+
+        }
+        color: white;
+        @include outer-container(40em);
+        label {
+            display: inline-block;
+            max-width: 100%;
+            margin-bottom: 5px;
+        }
+        .required-message {
+            display: none;
+        }
+        .ss-required-asterisk {
+            color: #d9534f;
+        }
+    }
+}
+
+.site-footer {
+    padding-left: 1em;
+    padding-right: 1em;
+    background-color: #333333;
+    color:white;
+    text-align: center;
+    @include clearfix;
+    .colophon {
+ 
+        
+    }
+    .social {
+        
+        ul {
+            margin: 0 auto;
+            display: table;
+            li {
+                padding: 0 10px;
+                display: table-cell;
+                vertical-align: middle;
+                a {
+                    color: white;
+                }
+            }
+        }
+    }
+}

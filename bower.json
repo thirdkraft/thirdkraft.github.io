@@ -1,0 +1,18 @@
+{
+  "name": "thirdkraft",
+  "version": "0.0.0",
+  "authors": [
+    "marcelbadua <bitterdash@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "smoothscroll": "https://github.com/galambalazs/smoothscroll-for-websites.git"
+  }
+}
