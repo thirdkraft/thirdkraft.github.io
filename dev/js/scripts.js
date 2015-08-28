@@ -2,7 +2,7 @@
 {
     "use strict";
 
-    $(window).stellar();
+    
 
     var $window = $(window),
     $image = $('.jumbotron');
@@ -34,6 +34,9 @@
     });
     if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))
     {
+
+        $(window).stellar();
+        
         var screenHeight = $(window).height();
         $(window).scroll(function()
         {

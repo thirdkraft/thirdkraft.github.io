@@ -64,6 +64,15 @@ body
         background-color: rgba(0,0,0,.75);
     }
 }
+.cover-background {
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    @include media($mobile) {
+        background-position: 100% 50%;
+    }
+    @extend .overlay;
+}
 .site-header
 {
 
@@ -135,14 +144,13 @@ body
 {
     position: relative;
     min-height: 100vh;
-    background-repeat: no-repeat;
-    background-size: cover;
-
-    @extend .overlay;
+    
 
     display: flex;
     align-items: center;
     padding: 1em;
+    
+    @extend .cover-background;
 
     .text-wrap
     {
@@ -238,10 +246,8 @@ body
     padding-top: 9em;
     padding-bottom: 9rem;
 
-    background-repeat: no-repeat;
-    background-size: cover;
+    @extend .cover-background;
 
-    @extend .overlay;
     .container {
         @include outer-container();
     }
