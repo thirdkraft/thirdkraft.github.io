@@ -42,13 +42,12 @@
     };
     $(document).on('click', '#main-navigation a', toggleNavigation);
 
-    // $("#main-navigation a").click( function() {
-    //     $().toggleClass('is-active');
-    //     $('.c-hamburger').toggleClass('is-active');
-    // });
+
 
     if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-        $(window).stellar();
+        
+        $.stellar({});
+
         var $window = $(window),
             $image = $('.jumbotron');
         $window.on('scroll', function() {

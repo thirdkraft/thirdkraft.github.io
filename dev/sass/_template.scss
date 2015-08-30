@@ -1,365 +1,453 @@
-*[data-element='animated'] {
+*[data-element='animated']
+{
     visibility: hidden;
+
     opacity: 0;
 }
 
-@media screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-    *[data-element='animated'] {
+@media screen and (min-device-width: 768px) and (max-device-width: 1024px)
+{
+    *[data-element='animated']
+    {
         visibility: visible;
+
         opacity: 1;
     }
 }
 
-@media screen and (max-device-width: 640px) {
-    *[data-element='animated'] {
+@media screen and (max-device-width: 640px)
+{
+    *[data-element='animated']
+    {
         visibility: visible;
+
         opacity: 1;
     }
 }
 
 
-.animated {
+.animated
+{
     visibility: visible;
+
     opacity: 1;
 }
 
-html, body {
+html,
+body
+{
     font-family: $base-font-family;
+
     margin: 0;
     padding: 0;
 }
 
 
-h2, h3, h4 {
-    span {
+h2,
+h3,
+h4
+{
+    span
+    {
         color: $action-color;
     }
 }
 
-h2 {
-    font-size:  4.236em;
+h2
+{
+    font-size: 4.236em;
 }
-h3 {
+h3
+{
     font-size: 2.618em;
 }
-h4 {
-    font-size: 1.618em;   
+h4
+{
+    font-size: 1.618em;
 }
-p {
+p
+{
     font-weight: 300;
+
     margin-bottom: 1.5em;
 }
 
-.social {
+.social
+{
     margin: 0;
     padding: 0;
+
     list-style: none;
-    li {
+    li
+    {
         display: inline-block;
     }
 }
 
 
-.overlay {
+.cover-background
+{
     position: relative;
-    &:after {
+
+    color: white;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: cover;
+    &:after
+    {
         position: absolute;
         top: 0;
         right: 0;
         bottom: 0;
         left: 0;
+
         content: '';
+
         background-color: rgba(0, 0, 0, .75);
     }
-}
-
-.cover-background {
-    background-repeat: no-repeat;
-    background-size: cover;
-    color: white;
-    background-position: 50% 50%;
-    @include media($mobile) {
-        
-    }
-    @extend .overlay;
-    > div {
+    > div
+    {
         position: relative;
         z-index: 1;
     }
 }
 
-@mixin arrow-bottom($color) {
+@mixin arrow-bottom($color)
+{
     position: relative;
-    &:after {
+    &:after
+    {
         position: absolute;
         z-index: -1;
         z-index: 10;
         top: 98.1%;
         left: 50%;
+
         width: 0;
         height: 0;
         margin-left: -40px;
+
         content: '';
+
         border-top: solid 40px $color;
         border-right: solid 40px transparent;
         border-left: solid 40px transparent;
     }
 }
 
-.site-header {
+.site-header
+{
     position: absolute;
     z-index: 50;
     top: 0;
     right: 0;
     bottom: auto;
     left: 0;
+
     padding-top: 3em;
     padding-right: 1em;
     padding-left: 1em;
-    @include clearfix;
-    
-    
-    #thirdkraft_logo {
-        @include transition (all .25s ease-in-out);
-        left: -100px;
-        width: 60px;
-    }
 
-    .brand {
+    @include clearfix;
+    #thirdkraft_logo
+    {
+        left: -100px;
+
+        width: 60px;
+
+        @include transition (all .25s ease-in-out);
+    }
+    .brand
+    {
         font-size: 2em;
-        color: white;
+
         float: left;
-        span {
+
+        color: white;
+        span
+        {
             display: inline-block;
+
             @include transform(translateY(-11px));
         }
     }
-    &.scrolled {
+    &.scrolled
+    {
         padding-top: 0;
-        #thirdkraft_logo {
-            background-color: black;
-            position:fixed;
+        #thirdkraft_logo
+        {
+            position: fixed;
+            top: 0;
             left: 0;
-            top:0;
+
             padding: 10px;
+
+            background-color: black;
         }
     }
-
 }
 
-#main-navigation {
+#main-navigation
+{
     position: fixed;
     top: 0;
-    left: 100%;
-    bottom: 0;
     right: 0;
+    bottom: 0;
+    left: 100%;
+
     width: 320px;
-    background-color: rgba(0,0,0,0.95);
-    @include transition(all 0.25s ease-in-out);
-    .navigation {
+
+    background-color: rgba(0,0,0,.95);
+
+    @include transition(all .25s ease-in-out);
+    .navigation
+    {
         padding-top: 6em;
-        > li {
-            > a {
-                display: block;
-                color: white;
-                padding: 1.25em 1em;
-                text-align: right;
+        > li
+        {
+            > a
+            {
                 font-size: 1.25em;
-                &:hover {
+
+                display: block;
+
+                padding: 1.25em 1em;
+
+                text-align: right;
+
+                color: white;
+                &:hover
+                {
                     background-color: $action-color;
                 }
             }
         }
     }
-    &.is-active {
+    &.is-active
+    {
         @include transform(translateX(-320px));
     }
 }
 
 
-.jumbotron-wrap {
+.jumbotron-wrap
+{
     background-color: black;
 }
 
-.jumbotron {
+.jumbotron
+{
     position: relative;
+
     display: flex;
+
     min-height: 100vh;
     padding: 1em;
+
     align-items: center;
     @extend .cover-background;
-    @include media($min-desktop) {
-        .text-wrap {
+    @include media($min-desktop)
+    {
+        .text-wrap
+        {
             max-width: 50%;
         }
     }
-    .text-wrap {
+    .text-wrap
+    {
         position: relative;
         z-index: 1;
-        @include transform(translateY(60px));
 
         color: #eee;
         text-shadow: 1px 1px 2px rgba(0, 0, 0, .75);
 
-        h1 {
+        @include transform(translateY(60px));
+        h1
+        {
             font-size: 3em;
             line-height: 1;
+
             margin: 0;
-            @include media($min-desktop) {
+
+            @include media($min-desktop)
+            {
                 font-size: 4em;
             }
         }
-        h2 {
+        h2
+        {
             font-size: 1.25em;
             font-weight: 400;
+
             margin-top: .5em;
-            @include media($min-desktop) {
+
+            @include media($min-desktop)
+            {
                 font-size: 2em;
             }
         }
-        a {
+        a
+        {
+            font-size: 1.2em;
+
+            padding: .75em 1em;
+
             color: #eee;
             border: 1px solid white;
-            padding: 0.75em 1em;
             border-radius: 30px;
-            font-size: 1.2em;
         }
     }
 }
 
-#welcome {
+#welcome
+{
     position: relative;
+
     padding: 6em 1em 8em;
+
     background-color: $dark-gray;
+
     @include arrow-bottom($dark-gray);
-    .content {
+    .content
+    {
         text-align: center;
+
         color: white;
+
         @include outer-container(40em);
-        h2 {
+        h2
+        {
             margin-bottom: 1em;
+
             letter-spacing: -1px;
         }
-        p {
+        p
+        {
             font-size: 1.2em;
         }
-
     }
 }
-#why-us {
+#why-us
+{
     padding: 6em 1em;
-    
+
     @include outer-container;
-    .why-block {
-        @include media($min-desktop) {
+    .why-block
+    {
+        @include media($min-desktop)
+        {
+            margin-bottom: 1em;
+
             @include span-columns(4);
             @include omega(3n);
-            margin-bottom: 1em
         }
     }
-    .cta {
+    .cta
+    {
         text-align: center;
-        a {
+        a
+        {
             font-size: 1.4em;
+
             display: inline-block;
+
+            padding: .75em 2em;
+
+            color: white;
             border: 1px solid darken($action-color, 10%);
-            padding: 0.75em 2em;
             border-radius: 60px;
             background-color: $action-color;
-            color: white;
-            &:hover {
+            &:hover
+            {
                 background-color: darken($action-color, 10%);
             }
         }
     }
 }
 
-#about-us {
-    padding: 6em 1em;
+#about-us
+{
     display: flex;
-    align-items:center;
+
     min-height: 100vh;
+    padding: 6em 1em;
+
+    align-items: center;
     @extend .cover-background;
-    .container {
+    .container
+    {
         @include outer-container();
     }
-    .content {
-        @include media($min-desktop) {
+    .content
+    {
+        @include media($min-desktop)
+        {
             @include span-columns(7);
         }
     }
 }
 
-.services {
-    padding: 6em 1em;
-    background-color: $dark-gray;
-    @extend .arrow-bottom;
-    color: #eeeeee;
-    @include clearfix;
-    .service {
-        //padding: 2em;
-        text-align: center;
-        @include media($min-desktop) {
-            @include span-columns(3);
-            // /padding: 1em;
-            //border-right: 1px solid $light-gray;
-            &:last-child {
-                border-right: 0;
-            }
-        }
-        .content {
-            @include transition(all .25s ease-in-out);
-            &:hover {
-                @include transform(scale(1.1));
-            }
-        }
-        img {
-            margin-bottom: 1em;
-        }
-    }
-}
 
-#contact-us {
+#contact-us
+{
     padding: 6em 1em;
+
     @include clearfix;
-    h2 {
+    h2
+    {
+        margin-bottom: .25em;
+
         text-align: center;
-        margin-bottom: 0.25em;
     }
-    p {
-        text-align: center;
+    p
+    {
         margin-bottom: 2em;
+
+        text-align: center;
     }
-    .content {
+    .content
+    {
         @include outer-container(50em);
-        @include media($min-desktop) {
-            .form-contact {
+        @include media($min-desktop)
+        {
+            .form-contact
+            {
                 @include span-columns(8);
             }
-            .address {
+            .address
+            {
                 @include span-columns(4);
             }
         }
-        .form-contact {
-            label {
+        .form-contact
+        {
+            label
+            {
                 display: inline-block;
+
                 max-width: 100%;
                 margin-bottom: 5px;
             }
-            .required-message {
+            .required-message
+            {
                 display: none;
             }
-            .required {
+            .required
+            {
                 color: #d9534f;
             }
         }
     }
 }
 
-.site-footer {
+.site-footer
+{
     padding: 2em 1em;
+
     text-align: center;
+
     color: white;
     background-color: #333;
+
     @include clearfix;
 }
