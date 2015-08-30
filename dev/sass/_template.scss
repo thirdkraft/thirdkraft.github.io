@@ -29,7 +29,11 @@ html, body {
 }
 
 
-
+h2, h3, h4 {
+    span {
+        color: $primary-color;
+    }
+}
 
 h2 {
     font-size:  4.236em;
@@ -53,12 +57,7 @@ p {
         display: inline-block;
     }
 }
-.text-large {
-    font-size: 1.2em;
-}
-.text-primary {
-    color: $primary-color;
-}
+
 
 .overlay {
     position: relative;
@@ -87,7 +86,7 @@ p {
     }
 }
 
-.arrow-bottom {
+@mixin arrow-bottom($color) {
     position: relative;
     &:after {
         position: absolute;
@@ -99,7 +98,7 @@ p {
         height: 0;
         margin-left: -40px;
         content: '';
-        border-top: solid 40px $dark-gray;
+        border-top: solid 40px $color;
         border-right: solid 40px transparent;
         border-left: solid 40px transparent;
     }
@@ -116,11 +115,14 @@ p {
     padding-right: 1em;
     padding-left: 1em;
     @include clearfix;
-    @include transition (all .25s ease-in-out);
+    
+    
     #thirdkraft_logo {
-        //float: left;
+        @include transition (all .25s ease-in-out);
+        left: -100px;
         width: 60px;
     }
+
     .brand {
         font-size: 2em;
         color: white;
@@ -131,42 +133,47 @@ p {
         }
     }
     &.scrolled {
-        padding-top: 10px;
-        position: fixed;
-        background-color: #eeeeee;
-        box-shadow: 0 0 5px rgba(0,0,0,0.5);
-        .brand {
-            color: #333333;
-            path {
-                fill: #333333
+        padding-top: 0;
+        #thirdkraft_logo {
+            background-color: black;
+            position:fixed;
+            left: 0;
+            top:0;
+            padding: 10px;
+        }
+    }
+
+}
+
+#main-navigation {
+    position: fixed;
+    top: 0;
+    left: 100%;
+    bottom: 0;
+    right: 0;
+    width: 320px;
+    background-color: rgba(0,0,0,0.95);
+    @include transition(all 0.25s ease-in-out);
+    .navigation {
+        padding-top: 6em;
+        > li {
+            > a {
+                display: block;
+                color: white;
+                padding: 1.25em 1em;
+                text-align: right;
+                font-size: 1.25em;
+                &:hover {
+                    background-color: $action-color;
+                }
             }
         }
-        .main-navigation {
-            a {
-                color: #333333;
-            }
-        }
+    }
+    &.is-active {
+        @include transform(translateX(-320px));
     }
 }
 
-.main-navigation {
-    display: table;
-    float: right;
-    margin: 0;
-    padding: 0;
-    > li {
-        display: table-cell;
-        > a {
-            display: inline-block;
-            padding: .75em 1em;
-            text-decoration: none;
-            color: #ddd;
-            &:hover, &:focus {
-                color: white;
-            }
-        }
-    }
-}
 
 .jumbotron-wrap {
     background-color: black;
@@ -188,10 +195,10 @@ p {
         position: relative;
         z-index: 1;
         @include transform(translateY(60px));
-        h1, h2 {
-            color: #eee;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, .75);
-        }
+
+        color: #eee;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, .75);
+
         h1 {
             font-size: 3em;
             line-height: 1;
@@ -208,9 +215,6 @@ p {
                 font-size: 2em;
             }
         }
-        &.scrolled {
-            opacity: .35;
-        }
         a {
             color: #eee;
         }
@@ -221,7 +225,7 @@ p {
     position: relative;
     padding: 6em 1em 8em;
     background-color: $dark-gray;
-    @extend .arrow-bottom;
+    @include arrow-bottom($dark-gray);
     .content {
         text-align: center;
         color: white;
@@ -230,13 +234,15 @@ p {
             margin-bottom: 1em;
             letter-spacing: -1px;
         }
+        p {
+            font-size: 1.2em;
+        }
 
     }
 }
 #why-us {
-    padding-top: 9em;
-    padding-bottom: 9rem;
-    @include clearfix;
+    padding: 6em 1em;
+    
     @include outer-container;
     .why-block {
         @include media($min-desktop) {
@@ -248,8 +254,7 @@ p {
 }
 
 #about-us {
-    padding-top: 9em;
-    padding-bottom: 9rem;
+    padding: 6em 1em;
     display: flex;
     align-items:center;
     min-height: 100vh;
@@ -265,7 +270,7 @@ p {
 }
 
 .services {
-    padding: 6em 0;
+    padding: 6em 1em;
     background-color: $dark-gray;
     @extend .arrow-bottom;
     color: #eeeeee;
@@ -294,8 +299,7 @@ p {
 }
 
 #contact-us {
-    padding-top: 6em;
-    padding-bottom: 6em;
+    padding: 6em 1em;
     @include clearfix;
     h2 {
         text-align: center;
@@ -332,8 +336,7 @@ p {
 }
 
 .site-footer {
-    padding-right: 1em;
-    padding-left: 1em;
+    padding: 2em 1em;
     text-align: center;
     color: white;
     background-color: #333;

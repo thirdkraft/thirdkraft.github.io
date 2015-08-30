@@ -13,6 +13,7 @@
     "tests"
   ],
   "dependencies": {
-    "smoothscroll": "https://github.com/galambalazs/smoothscroll-for-websites.git"
+    "smoothscroll": "https://github.com/galambalazs/smoothscroll-for-websites.git",
+    "stackicons": "https://github.com/parkerbennett/stackicons.git"
   }
 }
