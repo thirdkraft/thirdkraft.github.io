@@ -2,6 +2,7 @@
     visibility: hidden;
     opacity: 0;
 }
+
 @media screen and (min-device-width: 768px) and (max-device-width: 1024px) {
     *[data-element='animated'] {
         visibility: visible;
@@ -15,348 +16,326 @@
         opacity: 1;
     }
 }
+
 .animated {
     visibility: visible;
     opacity: 1;
 }
 
-html,
-body
-{
+html, body {
     font-family: $base-font-family;
     margin: 0;
     padding: 0;
 }
 
-    h2 {
-        font-size: 1.68em * 1.25;
-    }
-    h3 {
-        font-size: 1.68em * 1.1;
-    }
-    
 
-@include media($min-desktop) {
-    h2 {
-        font-size: 1.68em * 2;
-    }
-    h3 {
-        font-size: 1.68em * 1.25;
+
+
+h2 {
+    font-size:  4.236em;
+}
+h3 {
+    font-size: 2.618em;
+}
+h4 {
+    font-size: 1.618em;   
+}
+p {
+    font-weight: 300;
+    margin-bottom: 1.5em;
+}
+
+.social {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    li {
+        display: inline-block;
     }
 }
-.text-primary
-{
+.text-large {
+    font-size: 1.2em;
+}
+.text-primary {
     color: $primary-color;
 }
-.overlay
-{
+
+.overlay {
     position: relative;
-    &:after
-    {
+    &:after {
         position: absolute;
         top: 0;
         right: 0;
         bottom: 0;
         left: 0;
-
         content: '';
-
-        background-color: rgba(0,0,0,.75);
+        background-color: rgba(0, 0, 0, .75);
     }
 }
+
 .cover-background {
     background-repeat: no-repeat;
     background-size: cover;
-    
+    color: white;
     @include media($mobile) {
         background-position: 100% 50%;
     }
     @extend .overlay;
-}
-.site-header
-{
-
-    position: absolute;
-    z-index: 50;
-    top: 0;
-    right: 0;
-    bottom: auto;
-    left: 0;
-
-    padding-top: 2em;
-    padding-right: 1em;
-    padding-left: 1em;
-
-    @include clearfix;
-    @include transition (all 0.25s ease-in-out);
-    #thirdkraft_logo {
-        //float: left;
-        width: 60px;
-    }
-    .brand
-    {
-        color: white;
-        font-size: 2em;
-        span {
-            display: inline-block;
-            @include transform(translateY(-11px));
-        }
-    }
-    // &.scrolled {
-    //     padding-top: 0;
-    //     position: fixed;
-    //     background-color: black;
-    // }
-}
-.main-navigation
-{
-    display: table;
-    float: right;
-
-    margin: 0;
-    padding: 0;
-    > li
-    {
-        display: table-cell;
-        > a
-        {
-    
-
-            display: inline-block;
-
-            padding: .75em 1em;
-
-            text-decoration: none;
-
-            color: #ddd;
-            &:hover,
-            &:focus
-            {
-                color: white;
-            }
-        }
-    }
-}
-.jumbotron-wrap {
-    background-color: black;
-}
-.jumbotron
-{
-    position: relative;
-    min-height: 100vh;
-    
-
-    display: flex;
-    align-items: center;
-    padding: 1em;
-    
-    @extend .cover-background;
-
-    .text-wrap
-    {
-        @include transform(translateY(60px));
+    > div {
         position: relative;
         z-index: 1;
-        h1,h2
-        {
-            color: #eee;
-            text-shadow: 1px 1px 2px rgba(0,0,0,.75);
-        }
-        h1 {
-            font-size: 3em;
-            @include media($min-desktop) {
-                font-size: 4em;
-            }
-            line-height: 1;
-            margin: 0;
-        }
-        h2 {
-            font-size: 1.25em;
-            @include media($min-desktop) {
-                font-size: 2em;
-            }
-            font-weight: 400;
-            margin-top: 0.5em;
-        }
-        &.scrolled {
-            opacity: 0.35;
-        }
-        a
-        {
-            color: #eee;
-        }
-    }
-    @include media($min-desktop) {
-        .text-wrap
-        {
-
-            max-width: 50%;
-        }  
     }
 }
 
-.welcome-text
-{
-    //overflow: hidden;
-
+.arrow-bottom {
     position: relative;
-
-    padding: 6em 1em 8em;
-
-    background-color: $dark-gray;
-    .content
-    {
-        text-align: center;
-
-        color: white;
-
-        @include outer-container(30em);
-        h2
-        {
-           letter-spacing: -1px;
-           margin-bottom: 1em;
-        }
-        p {
-            font-size: 1.2em;
-        }
-        
-    }
-    &:after
-    {
+    &:after {
         position: absolute;
         z-index: -1;
         z-index: 10;
         top: 98.1%;
         left: 50%;
-
         width: 0;
         height: 0;
         margin-left: -40px;
-
         content: '';
-
         border-top: solid 40px $dark-gray;
         border-right: solid 40px transparent;
         border-left: solid 40px transparent;
     }
 }
 
-.drama
-{
-    padding-top: 9em;
-    padding-bottom: 9rem;
-
-    @extend .cover-background;
-
-    .container {
-        @include outer-container();
+.site-header {
+    position: absolute;
+    z-index: 50;
+    top: 0;
+    right: 0;
+    bottom: auto;
+    left: 0;
+    padding-top: 2em;
+    padding-right: 1em;
+    padding-left: 1em;
+    @include clearfix;
+    @include transition (all .25s ease-in-out);
+    #thirdkraft_logo {
+        //float: left;
+        width: 60px;
     }
-    .content
-    {
-        position: relative;
-        z-index: 1;
-        padding: 1em;
-         @include media($min-desktop) {
-            @include span-columns(6);    
+    .brand {
+        font-size: 2em;
+        color: white;
+        float: left;
+        span {
+            display: inline-block;
+            @include transform(translateY(-11px));
         }
-        
-        
-
-        h2
-        {
-
-
-            color: white;
+    }
+    &.scrolled {
+        padding-top: 10px;
+        position: fixed;
+        background-color: #eeeeee;
+        box-shadow: 0 0 5px rgba(0,0,0,0.5);
+        .brand {
+            color: #333333;
+            path {
+                fill: #333333
+            }
         }
-        p
-        {
-            color: white;
+        .main-navigation {
+            a {
+                color: #333333;
+            }
         }
     }
 }
-.services {
-    padding-top: 6em;
-    padding-bottom: 6em;
-    @include clearfix;
-    .service {
-        .content {
-            @include transition(all 0.25s ease-in-out);
-            &:hover {
-                @include transform(scale(1.1));
+
+.main-navigation {
+    display: table;
+    float: right;
+    margin: 0;
+    padding: 0;
+    > li {
+        display: table-cell;
+        > a {
+            display: inline-block;
+            padding: .75em 1em;
+            text-decoration: none;
+            color: #ddd;
+            &:hover, &:focus {
+                color: white;
             }
         }
-        padding: 2em;
+    }
+}
+
+.jumbotron-wrap {
+    background-color: black;
+}
+
+.jumbotron {
+    position: relative;
+    display: flex;
+    min-height: 100vh;
+    padding: 1em;
+    align-items: center;
+    @extend .cover-background;
+    @include media($min-desktop) {
+        .text-wrap {
+            max-width: 50%;
+        }
+    }
+    .text-wrap {
+        position: relative;
+        z-index: 1;
+        @include transform(translateY(60px));
+        h1, h2 {
+            color: #eee;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, .75);
+        }
+        h1 {
+            font-size: 3em;
+            line-height: 1;
+            margin: 0;
+            @include media($min-desktop) {
+                font-size: 4em;
+            }
+        }
+        h2 {
+            font-size: 1.25em;
+            font-weight: 400;
+            margin-top: .5em;
+            @include media($min-desktop) {
+                font-size: 2em;
+            }
+        }
+        &.scrolled {
+            opacity: .35;
+        }
+        a {
+            color: #eee;
+        }
+    }
+}
+
+#welcome {
+    position: relative;
+    padding: 6em 1em 8em;
+    background-color: $dark-gray;
+    @extend .arrow-bottom;
+    .content {
         text-align: center;
+        color: white;
+        @include outer-container(40em);
+        h2 {
+            margin-bottom: 1em;
+            letter-spacing: -1px;
+        }
+
+    }
+}
+#why-us {
+    padding-top: 9em;
+    padding-bottom: 9rem;
+    @include clearfix;
+    @include outer-container;
+    .why-block {
         @include media($min-desktop) {
             @include span-columns(4);
-            padding: 3em;
-            border-right: 1px solid $light-gray;
+            @include omega(3n);
+            margin-bottom: 1em
+        }
+    }
+}
+
+#about-us {
+    padding-top: 9em;
+    padding-bottom: 9rem;
+    display: flex;
+    align-items:center;
+    min-height: 100vh;
+    @extend .cover-background;
+    .container {
+        @include outer-container();
+    }
+    .content {
+        @include media($min-desktop) {
+            @include span-columns(7);
+        }
+    }
+}
+
+.services {
+    padding: 6em 0;
+    background-color: $dark-gray;
+    @extend .arrow-bottom;
+    color: #eeeeee;
+    @include clearfix;
+    .service {
+        //padding: 2em;
+        text-align: center;
+        @include media($min-desktop) {
+            @include span-columns(3);
+            // /padding: 1em;
+            //border-right: 1px solid $light-gray;
             &:last-child {
                 border-right: 0;
+            }
+        }
+        .content {
+            @include transition(all .25s ease-in-out);
+            &:hover {
+                @include transform(scale(1.1));
             }
         }
         img {
             margin-bottom: 1em;
         }
-        h3 {
-
-        }
     }
 }
 
-.contact {
-      background-color: $dark-gray;
+#contact-us {
     padding-top: 6em;
     padding-bottom: 6em;
     @include clearfix;
-
-    background-repeat: no-repeat;
-    background-size: cover;
+    h2 {
+        text-align: center;
+        margin-bottom: 0.25em;
+    }
+    p {
+        text-align: center;
+        margin-bottom: 2em;
+    }
     .content {
-        padding: 1em;
-        h2 {
-
+        @include outer-container();
+        @include media($min-desktop) {
+            .form-contact {
+                @include span-columns(8);
+            }
+            .address {
+                @include span-columns(4);
+            }
         }
-        color: white;
-        @include outer-container(40em);
-        label {
-            display: inline-block;
-            max-width: 100%;
-            margin-bottom: 5px;
-        }
-        .required-message {
-            display: none;
-        }
-        .ss-required-asterisk {
-            color: #d9534f;
+        .form-contact {
+            label {
+                display: inline-block;
+                max-width: 100%;
+                margin-bottom: 5px;
+            }
+            .required-message {
+                display: none;
+            }
+            .required {
+                color: #d9534f;
+            }
         }
     }
 }
 
 .site-footer {
-    padding-left: 1em;
     padding-right: 1em;
-    background-color: #333333;
-    color:white;
+    padding-left: 1em;
     text-align: center;
+    color: white;
+    background-color: #333;
     @include clearfix;
-    .colophon {
- 
-        
-    }
-    .social {
-        
-        ul {
-            margin: 0 auto;
-            display: table;
-            li {
-                padding: 0 10px;
-                display: table-cell;
-                vertical-align: middle;
-                a {
-                    color: white;
-                }
-            }
-        }
-    }
 }
