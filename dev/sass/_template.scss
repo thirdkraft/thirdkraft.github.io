@@ -77,8 +77,9 @@ p {
     background-repeat: no-repeat;
     background-size: cover;
     color: white;
+    background-position: 50% 50%;
     @include media($mobile) {
-        background-position: 100% 50%;
+        
     }
     @extend .overlay;
     > div {
@@ -330,7 +331,7 @@ p {
         margin-bottom: 2em;
     }
     .content {
-        @include outer-container();
+        @include outer-container(50em);
         @include media($min-desktop) {
             .form-contact {
                 @include span-columns(8);
