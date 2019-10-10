@@ -1,0 +1,38 @@
+---
+layout: post
+title:  "Installing Wordpress Via Terminal Command"
+date:   2015-04-23 21:07:20
+tags: tutorial
+author: Marcel Badua
+---
+<p>Installing wordpress via terminal is slicker and faster. If you are on Windows, you need to install some dependencies - for Linux and OSX just go ahead and fire up your terminal.</p>
+<p>On Windows, download and install the following packages from <a href="http://gnuwin32.sourceforge.net/" title="">gnuwin32</a>.</p>
+<ol>
+  <li> <strong>Wget</strong> - <a href="http://gnuwin32.sourceforge.net/packages/wget.htm" title="wget">Wget for Windows</a></li>
+  <li><strong>Tar</strong> - <a href="http://gnuwin32.sourceforge.net/packages/gtar.htm" title="tar">Tar for Windows</a></li>
+  <li><strong>Core Utilities</strong> - <a href="http://gnuwin32.sourceforge.net/packages/coreutils.htm" title="core utilitites">CoreUtils for Windows</a></li>
+  </ol>
+<p>Restart your machine to update yor PATH VARIABLES.</p>
+
+<p>Start you wordpress installation, go to your <i>local server directory</i>.</p>
+
+<p>Create a directory for your project and go to that directory.</p>
+<pre>
+mkdir testsite
+cd testsite
+</pre>
+<p>Download the latest wordpress version using the <code>wget</code> command.</p>
+<pre>
+wget http://wordpress.org/latest.tar.gz
+</pre>
+<p>Extract downloaded archive file,</p>
+<pre>
+tar xfz latest.tar.gz
+</pre>
+<p>Move extracted content one directory up then remove unnecessary file</p>
+<pre>
+mv wordpress/* ../
+rm -rf wordpress
+rm latest.tar.gz
+</pre>
+<p>Wordpress is now downloaded and is ready to be installed. Set-up your database and edit <code>wp-config.php</code>. Continue wordpress installation on your browser.</p>

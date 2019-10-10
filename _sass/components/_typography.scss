@@ -1,0 +1,75 @@
+html {
+  font-size: $base-font-size;
+}
+
+body {
+  color: $base-font-color;
+
+  font-family: $base-font-family;
+  font-weight: $base-font-weight;
+  line-height: $base-line-height;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $heading-font-color;
+
+  font-family: $heading-font-family;
+  font-weight: $heading-font-weight;
+  line-height: $heading-line-height;
+  span {
+    color: $primary-color;
+  }
+}
+
+h1 {
+  margin: $base-spacing 0;
+
+  font-size: modular-scale(5);
+}
+
+h2 {
+  margin: $base-spacing 0 $small-spacing;
+
+  font-size: modular-scale(4);
+}
+
+h3 {
+  margin: $base-spacing 0 $small-spacing;
+
+  font-size: modular-scale(3);
+}
+
+h4 {
+  margin: $base-spacing 0 $small-spacing;
+
+  font-size: modular-scale(2);
+}
+
+h5 {
+  margin: $base-spacing 0 $small-spacing;
+
+  font-size: modular-scale(1);
+}
+
+small {
+  font-size: modular-scale(-1);
+}
+
+p {
+  margin: 0 0 $base-spacing;
+}
+
+a {
+  color: $primary-color;
+
+  &:hover {
+    color: shade($primary-color, 25%);
+  }
+
+  &:focus {}
+}

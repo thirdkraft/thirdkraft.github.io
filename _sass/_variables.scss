@@ -1,0 +1,44 @@
+// Colors
+$dark-gray: #333;
+$medium-gray: #999;
+$light-gray: #ddd;
+$primary-color: #9CC3E2;
+$secondary-color: darken($primary-color, 20);
+$info-color: #276f86;
+$success-color: #43A047;
+$danger-color: #FF4D4D;
+// Globally change the base ratio
+$bourbon: (
+  "modular-scale-ratio": 1.333, // Perfect Fourth
+);
+// Typography
+
+@import url('https://fonts.googleapis.com/css?family=Questrial&display=swap');
+
+$base-font-family: 'Questrial', serif;
+
+$heading-font-family: $base-font-family;
+$base-font-size: 18px;
+$base-line-height: 1.6;
+$heading-line-height: 1.15;
+$base-font-weight: 400;
+$heading-font-weight: 700;
+// Font Colors
+$base-font-color: $dark-gray;
+$heading-font-color: $base-font-color;
+// Other Sizes
+$base-border-radius: 6px;
+$base-spacing: 1.5rem;
+$small-spacing: $base-spacing * 0.65;
+$base-z-index: 0;
+// Border
+$base-border-color: $light-gray;
+$base-border: 1px solid $base-border-color;
+// Background Colors
+$base-background-color: tint($light-gray, 85);
+$secondary-background-color: shade($base-border-color, 65);
+// Shadow
+$base-box-shadow: 5px 2px 10px 2px rgba(0,0,0,0.1);
+// Animations
+$base-duration: 250ms;
+$base-timing: ease;

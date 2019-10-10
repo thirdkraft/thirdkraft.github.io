@@ -1,0 +1,61 @@
+// Buttons
+$_button-background-color: $primary-color;
+$_button-background-color-hover: shade($_button-background-color, 10);
+
+$_button-border-color: $_button-background-color;
+$_button-border-color-hover: $_button-background-color;
+
+$_button-color: #FFFFFF;
+$_button-color-hover: #FFFFFF;
+
+#{$all-buttons},
+.button {
+  display: inline-block;
+
+  padding: $small-spacing $base-spacing;
+
+  cursor: pointer;
+  user-select: none;
+  transition: background-color $base-duration $base-timing;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+  text-decoration: none;
+  letter-spacing: 1px;
+  color: $_button-color;
+  border: 1px solid $_button-border-color;
+  border-radius: $base-border-radius;
+  outline: 0;
+//  background-color: $_button-background-color;
+
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  font-weight: 400;
+  line-height: 1;
+
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+
+  @include gradient(-10deg, $secondary-color, $primary-color);
+
+  &:hover {
+    color: $_button-color-hover;
+    background-color: $_button-background-color-hover;
+  }
+
+  &:focus {}
+
+  &:disabled {
+    cursor: not-allowed;
+
+    opacity: 0.5;
+
+    &:hover {
+      background-color: $_button-background-color;
+    }
+  }
+
+}

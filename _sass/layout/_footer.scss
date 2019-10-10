@@ -1,0 +1,62 @@
+#site-footer {
+  #contact-us {
+
+    overflow: hidden;
+    position: relative;
+    z-index: 1000;
+    &:before {
+      content: '';
+      background-color: rgba(255,255,255, 0.1);
+      position: absolute;
+      z-index: 500;
+      width: 40%;
+      top: -50%;
+      right: auto;
+      bottom: -30%;
+      left: -15%;
+      transform: rotate(-33deg);
+    }
+    &:after {
+      content: '';
+      background-color: rgba(255,255,255, 0.1);
+      position: absolute;
+      z-index: 500;
+      width: 40%;
+      top: -50%;
+      left: auto;
+      bottom: -30%;
+      right: -15%;
+      transform: rotate(-33deg);
+    }
+    .container {
+      position: relative;
+      z-index: 1500;
+    }
+
+    padding-top: $base-spacing*4;
+    padding-bottom: $base-spacing*4;
+
+
+    text-align: center;
+
+    @include gradient(-10deg, $secondary-color, $primary-color);
+
+    a, p, span, h3 {
+      color: #FFFFFF;
+    }
+  }
+  @media screen and (min-width: 426px) {
+      .colophon {
+        padding-top: $base-spacing*2;
+        padding-bottom: $base-spacing*2;
+
+        .row  {
+          display: grid;
+          grid-template-columns: repeat(2, 50%);
+        .copyright {
+          text-align: right;
+        }
+      }
+    }
+  }
+}

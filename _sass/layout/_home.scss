@@ -1,0 +1,142 @@
+.home {
+  #site-header {
+    position: absolute;
+    z-index: 3000;
+    top: 0;
+    right: 0;
+    bottom: auto;
+    left: 0;
+  }
+}
+
+#hero{
+  background-color: $primary-color;
+  overflow: hidden;
+  position: relative;
+  z-index: 1000;
+  &:before {
+    content: '';
+    background-color: rgba(255,255,255, 0.1);
+    position: absolute;
+    z-index: 500;
+    width: 40%;
+    top: -50%;
+    right: auto;
+    bottom: -30%;
+    left: -15%;
+    transform: rotate(33deg);
+  }
+  .container {
+    position: relative;
+    z-index: 1500;
+  }
+  a {
+    @extend.button;
+    background-color: transparent!important;
+    background: none!important;
+    color: $dark-gray!important;
+    border: 2px solid $dark-gray;
+  }
+   p {
+     font-size: modular-scale(1);
+   }
+  @media screen and (min-width: 426px) {
+    img {
+      max-width: 180%;
+    }
+    .container {
+      .row {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        align-items: center;
+      }
+    }
+  }
+}
+
+#welcome {
+  background-color: $dark-gray;
+
+  padding-top: $base-spacing*3;
+  padding-bottom: $base-spacing*3;
+  text-align: center;
+  h3,p {
+    color: white;
+  }
+
+
+}
+#services{
+  padding-top: $base-spacing*6;
+  padding-bottom: $base-spacing*6;
+  .section-title {
+    @include gradient(-10deg, $secondary-color, $primary-color);
+    h3 {
+      color: #FFFFFF;
+    }
+  }
+  @media screen and (min-width: 426px) {
+    .row {
+      display: grid;
+      grid-template-columns: repeat(3, 32%);
+      justify-content: center;
+
+      grid-row-gap: $base-spacing;
+      grid-column-gap: $base-spacing;
+      div {
+        border-radius: $base-border-radius;
+        background-color: white;
+        padding: $base-spacing;
+      }
+    }
+
+    .section-title {
+      position: relative;
+      h3 {
+        position: absolute;
+        top: 40%;
+        right: $base-spacing;
+      }
+  }
+}
+}
+#why-us {
+
+
+
+  @media screen and (min-width: 426px) {
+    .container {
+    display: grid;
+    grid-template-columns: repeat(2, 33.33%);
+    justify-items: center;
+    justify-content: center;
+
+    grid-row-gap: $base-spacing;
+    grid-column-gap: $base-spacing;
+
+    }
+  }
+}
+
+
+#about-us {
+
+  background-color: white;
+  padding-top: $base-spacing*6;
+  padding-bottom: $base-spacing*6;
+  a[href*="#"] {
+    @extend .button;
+  }
+
+  @media screen and (min-width: 426px) {
+    .row {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+          align-items: center;
+    }
+    img {
+      max-width: 180%;
+    }
+  }
+
+}

@@ -1,0 +1,51 @@
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-right: $base-spacing;
+  padding-left: $base-spacing;
+
+  @include clearfix;
+}
+
+.container-full {
+  padding-right: $base-spacing;
+  padding-left: $base-spacing;
+
+  @include clearfix;
+}
+
+hr {
+  border: 0;
+  border-top: $base-border;
+}
+
+.brand {
+
+    display: block;
+    text-decoration: none;
+    line-height: 1;
+  svg {
+    width: 60px;
+    path {
+      fill: $dark-gray;
+    }
+  }
+  span {
+    color: $dark-gray;
+    font-size: 2em;
+    font-weight: 700;
+    display: inline-block;
+    line-height: 1;
+    transform: translateY(-10px);
+  }
+  &:hover {
+    text-decoration: none;
+    color: #000000;
+    svg {
+      path {
+        fill: #000000;
+      }
+    }
+  }
+}

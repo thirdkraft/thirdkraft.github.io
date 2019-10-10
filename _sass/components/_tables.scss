@@ -1,0 +1,86 @@
+table {
+  width: 100%;
+  margin: $base-spacing 0;
+
+  table-layout: fixed;
+
+  text-align: left;
+
+  border-collapse: collapse;
+
+  thead {
+    vertical-align: bottom;
+
+    line-height: $heading-line-height;
+  }
+
+  tbody {
+    vertical-align: top;
+  }
+
+  tr {
+    border-bottom: $base-border;
+  }
+
+  th {
+    font-weight: 600;
+  }
+
+  td,
+  th {
+    padding: $small-spacing;
+  }
+}
+// https://codepen.io/AllThingsSmitty/pen/MyqmdM
+@media screen and (max-width: 600px) {
+  table {
+    border: 0;
+
+    thead {
+      position: absolute;
+
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+
+      width: 1px;
+      height: 1px;
+      margin: -1px;
+      padding: 0;
+
+      border: none;
+    }
+
+    tr {
+      display: block;
+
+      margin-bottom: 0.625em;
+
+      border-bottom: 3px solid #ddd;
+    }
+
+    td {
+      display: block;
+
+      text-align: center;
+
+      border-bottom: 1px solid #ddd;
+
+      &:before {
+        float: left;
+        /*
+     * aria-label has no advantage, it won't be read inside a table
+     content: attr(aria-label);
+     */
+
+        content: attr(data-label);
+        text-transform: uppercase;
+
+        font-weight: bold;
+      }
+
+      &:last-child {
+        border-bottom: 0;
+      }
+    }
+  }
+}

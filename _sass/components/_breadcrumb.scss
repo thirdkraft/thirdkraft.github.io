@@ -1,0 +1,35 @@
+.breadcrumb {
+  margin: $base-spacing 0 $base-spacing*2;
+  padding: 0;
+
+  list-style: none;
+
+  > li {
+    display: inline;
+
+    margin: 0;
+    padding: 0;
+
+    color: $medium-gray;
+
+    font-weight: 700;
+
+    &:after {
+      padding: 0 $small-spacing;
+
+      content: '/';
+    }
+
+    > a {
+      text-decoration: none;
+
+      color: $dark-gray;
+    }
+
+    &:last-child {
+      &:after {
+        content: '';
+      }
+    }
+  }
+}

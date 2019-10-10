@@ -1,0 +1,39 @@
+.pagination {
+  margin-bottom: $base-spacing;
+  padding-top: $base-spacing;
+  padding-right: 0;
+  padding-left: 0;
+
+  list-style: none;
+
+  border-top: $base-border;
+
+  > li {
+    display: inline-block;
+
+    margin: 0;
+    padding: 0;
+
+    > .page-numbers {
+      display: block;
+
+      min-width: 1.5rem;
+      margin-right: $small-spacing;
+      padding-bottom: $small-spacing*0.5;
+
+      text-align: center;
+      text-decoration: none;
+
+      color: $medium-gray;
+      outline: 0;
+
+      font-weight: 700;
+      line-height: 1;
+
+      &.current {
+        color: $dark-gray;
+        border-bottom: 3px solid darken($primary-color, 5%);
+      }
+    }
+  }
+}
