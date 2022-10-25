@@ -1,49 +1,121 @@
-<!DOCTYPE html>
+---
+layout: home
+---
+<section id="hero">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <h2>Reach out to your online audience.</h2>
+        <p>Thirdkraft specializes in building creative and highly optimized websites. We build sites to awe your audience.</p>
+        <a href="#services">Find out how we can help</a>
+      </div>
+      <div class="col">
+        <img src="/assets/img/458100-PFM5O5-305.jpg" alt="">
+      </div>
+  </div>
+</section>
 
-<html lang="en-US">
+  <section id="welcome">
+      <div class="container">
+        <h3>Are you ready to enjoy a <span>stunning</span> web presence?</h3>
+        <p>Not only do you need a simple online presence, you also need a well crafted website to awe your audience. It's our passion to create awesome websites that will help businesses boost their online presence.</p>
+        <p>We craft websites that are high-grade yet affordable for your business.</p>
+      </div>
+  </section>
 
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <section id="services">
+    <div class="container">
 
-    <title>{% if page.title %}{{ page.title | escape }} | Thirdkraft {% else %}{{ site.title | escape }}{% endif %}</title>
+    <div class="row">
 
-    <meta name="google-site-verification" content="7oj41o9_dVlm_nUeb-LRwe-JAozO2YFdPamMzmcu__s" />
-
-    <meta name="keywords" content="Baguio City">
-    <meta name="author" content="Thirdkraft ">
-
-    <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
-
-    <link rel="icon" type="image/png" href="{{ "/favicon.ico" | prepend: site.baseurl }}">
-
-    <link rel="stylesheet" href="{{ "/assets/css/main.css" | prepend: site.baseurl }}">
-    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
-    <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
-
-
-</head>
-
-  <body class="home">
-
-    <div id="site-wrap">
-
-      <main id="site-content" style="background-color: black; display: flex; align-items:center; min-height: 100px; justify-content: center; color: white; text-align: center;">
-        
-        <div class="content">
-          <a class="brand" href="{{ site.baseurl }}/">
-          <svg version="1.0" id="thirdkraft_logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 74.2" enable-background="new 0 0 100 74.2" xml:space="preserve"><path fill="#FFFFFF" d="M100,2.1H76.6L58.2,22c-1.2-3.9-3.2-7.6-5.9-10.8C46.3,4,37.4,0,27.3,0H13.1l-2.9,16.3h17 c5.2,0,9.7,1.9,12.6,5.4c2.1,2.5,3.3,5.6,3.5,9h-35l-2.7,13h34.4C35.4,52,26.2,57.9,17,57.9H2.9L0,74.2h17c14.8,0,28.7-8.5,36.4-21 l11.8,20.8h20.8L65.6,39L100,2.1z"/></svg>
-          <span>Thirdkraft</span>
-          </a>
-
-          <p>restart | recycle | rebirth</p>
+      <div class="section-title">
+          <h3>Our Services</h3>
         </div>
 
-      </main>
+      <div id="service-01">
+        <h4>Bespoke Wordpress Theme and Plugin</h4>
+        <p>We hand code Wordpress Themes and plugins to custom tailo to your needs.</p>
+      </div>
+
+
+      <div id="service-02">
+        <h4>Shopify Customization</h4>
+        <p>We customize the look of your store to your liking.</p>
+      </div>
+
+
+      <div id="service-03">
+        <h4>HTML Email Design</h4>
+        <p>We hand code specialized HTML Emails for your marketing branding.</p>
+      </div>
+
+
+      <div id="service-04">
+        <h4>Design Branding</h4>
+        <p>We design user interfaces and experience to meet your own brand.</p>
+      </div>
+
+
+      <div id="service-05">
+        <h4>Web and Mobile Applications</h4>
+        <p>We develop well crafted applications to compete with your growing company.</p>
+      </div>
+
+      </div>
 
     </div>
+  </section>
 
-  </body>
+  <section id="why-us">
+    <div class="container">
+      <div id="why-block-1">
+          <img src="/assets/img/icon/computer.png" alt="">
+          <h4><span>Top-notch</span> Design</h4>
+          <p>We design your website with your business on our mind, enabling us to design a custom solution which creates value for you and your customers</p>
+      </div>
+      <div id="why-block-2">
+          <img src="/assets/img/icon/write.png" alt="">
+          <h4><span>Experienced</span> Developers</h4>
+          <p>We develop your website based on the feature you aim for and we make sure we establish a full web compliant site on which you and your customers will truly connect to.</p>
+      </div>
+      <div id="why-block-3">
+          <img src="/assets/img/icon/price_tag.png" alt="">
+          <h4><span>Competitive</span> Prices</h4>
+          <p>Thirdkraft values quality over quantity. And with competitive prices going hand in hand with class and precision, we make sure it's an investment well spent.</p>
+      </div>
+      <div id="why-block-4">
+          <img src="/assets/img/icon/life_saver.png" alt="">
+          <h4><span>Reliable</span> Customer Service</h4>
+          <p>We value our clients' feedback and we will make sure your experience with us is beyond satisfactory at all times. We much in turn want to create a great rapport between you our client.</p>
+      </div>
+      <div id="why-block-5">
+          <img src="/assets/img/icon/clock.png" alt="">
+          <h4><span>Amazing</span> Turnaround Times</h4>
+          <p>We acknowledge the necessity of having a website as quick as possible and we know how to go about this without comprising our high standards.</p>
+      </div>
+      <div id="why-block-6">
+          <img src="/assets/img/icon/like.png" alt="">
+          <h4><span>Satisfaction </span>Guarantee</h4>
+          <p>We make sure you are fully satisfied with our work as much as we want to boast your website as our masterpiece. We will continue to craft to your delight. </p>
+      </div>
+      </div>
+  </section>
 
-</html>
+
+  <section id="about-us">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h3>You know you are <span>working</span> with experts!</h3>
+          <p>The Thirdkraft Web Development Team is a group of web craftsmen, who are expert in professional web design and web development – with experience in the craft of web creating for a decade. Thirdkraft is composed of team members who are currently based in Baguio City and Metro Manila Philippines.</p>
+          <p>Thirdkraft was born because of the collaborative efforts of its team members – designers, developers and marketing specialist who have been working together for the past decade – all enthusiastic in creating stunning websites.</p>
+
+          <a href="#contact-us">Let's work together</a>
+
+        </div>
+        <div class="col">
+          <img src="/assets/img/2860938.jpg" alt="">
+        </div>
+      </div>
+    </div>
+  </section>
